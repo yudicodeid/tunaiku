@@ -28,8 +28,8 @@ func (db *StockCloseDb) Add(ent StockCloseEnt) error {
 
 	db.File.Append(ent.ToString())
 
-
 	db.Data = append(db.Data, ent)
+
 	return nil
 }
 
@@ -85,6 +85,18 @@ func (db *StockCloseDb) ResetMax() {
 	}
 }
 
+
+func (db *StockCloseDb) RowsToString() []string {
+
+	var rows []string
+	for _, row :=range db.Data {
+		rows = append(rows, row.ToString())
+	}
+	return rows
+}
+
+
+
 func (db *StockCloseDb) UpdateAction(id string, action string) {
 
 	for i, v := range db.Data {
@@ -93,6 +105,8 @@ func (db *StockCloseDb) UpdateAction(id string, action string) {
 			break
 		}
 	}
+
+	db.File.Update(db.RowsToString())
 }
 
 
@@ -104,6 +118,8 @@ func (db *StockCloseDb) UpdateMax(id string) {
 			break
 		}
 	}
+
+	db.File.Update(db.RowsToString())
 
 }
 
