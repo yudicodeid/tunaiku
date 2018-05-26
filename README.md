@@ -1,4 +1,4 @@
-# tunaiku-golang backend
+# Tunaiku-golang backend
 Make auto decision buy-sell for maximum profit for stock close
 
 
@@ -27,7 +27,7 @@ Make auto decision buy-sell for maximum profit for stock close
 
 
 ## Authors
-* Yudi CODE.ID - [CODE.ID](https://github.com/yudicodeid)
+* Yudi CODE.ID - [CODE.ID](https://www.code.id/)
 
 
 
