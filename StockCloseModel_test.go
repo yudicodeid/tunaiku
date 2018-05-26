@@ -9,17 +9,12 @@ import (
 
 func TestValidate(t *testing.T) {
 
-	db := CreateStockCloseDb()
-
 	model := StockCloseModel{}
-	model.Db = &db
-	model.TruncateData()
-
 	model.StockDate = time.Now()
 	model.Open = 110
 	model.High = 111
 	model.Low = 99
-	model.Close = 120
+	model.Close = 120 //wrong
 	model.VolumeTrade = 50
 
 	_, err := model.Add()
@@ -37,8 +32,7 @@ func TestInsert(t *testing.T) {
 
 	db := CreateStockCloseDb()
 
-	model := StockCloseModel{}
-	model.Db = &db
+	model := CreateStockCloseModel(&db)
 	model.TruncateData()
 
 	model.StockDate = time.Now()
@@ -71,8 +65,7 @@ func TestMaxProfit(t *testing.T) {
 
 	db := CreateStockCloseDb()
 
-	model := StockCloseModel{}
-	model.Db = &db
+	model := CreateStockCloseModel(&db)
 	model.TruncateData()
 
 	model.StockDate = time.Now()
@@ -89,8 +82,7 @@ func TestMaxProfit(t *testing.T) {
 	}
 
 
-	model1 := StockCloseModel{}
-	model1.Db = &db
+	model1 := CreateStockCloseModel(&db)
 	model1.StockDate = time.Now().AddDate(0,0,1)
 	fmt.Println(model1.StockDate.Format("02/01/2006"))
 
@@ -106,8 +98,7 @@ func TestMaxProfit(t *testing.T) {
 	}
 
 
-	model2 := StockCloseModel{}
-	model2.Db = &db
+	model2 := CreateStockCloseModel(&db)
 	model2.StockDate  = time.Now().AddDate(0,0,2)
 	fmt.Println(model2.StockDate.Format("02/01/2006"))
 
