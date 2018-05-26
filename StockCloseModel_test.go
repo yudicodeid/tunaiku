@@ -5,9 +5,7 @@ import (
 	"time"
 	"strconv"
 	"fmt"
-	"webstock/entity"
 )
-
 
 
 func TestValidate(t *testing.T) {
@@ -22,7 +20,7 @@ func TestValidate(t *testing.T) {
 	model.Close = 120
 	model.VolumeTrade = 50
 
-	err := model.Add()
+	_, err := model.Add()
 
 	if err!=nil {
 		t.Log("TestValidate :" + err.Error() + ": Success")
@@ -66,61 +64,61 @@ func TestInsert(t *testing.T) {
 
 func TestMaxProfit(t *testing.T) {
 
-	ent := entity.StockCloseEnt{}
-	ent.TruncateData()
+	model := StockCloseModel{}
+	model.TruncateData()
 
-	ent.StockDate = time.Now()
-	fmt.Println(ent.StockDate.Format("02/01/2006"))
+	model.StockDate = time.Now()
+	fmt.Println(model.StockDate.Format("02/01/2006"))
 
-	ent.Open = 110
-	ent.High = 111
-	ent.Low = 99
-	ent.Close = 100
-	ent.VolumeTrade = 50
-	id, err := ent.Insert()
+	model.Open = 110
+	model.High = 111
+	model.Low = 99
+	model.Close = 100
+	model.VolumeTrade = 50
+	id, err := model.Add()
 	if id == "" {
 		t.Error(err.Error())
 	}
 
 
-	ent1 := entity.StockCloseEnt{}
-	ent1.StockDate = time.Now().AddDate(0,0,1)
-	fmt.Println(ent1.StockDate.Format("02/01/2006"))
+	model1 := StockCloseModel{}
+	model1.StockDate = time.Now().AddDate(0,0,1)
+	fmt.Println(model1.StockDate.Format("02/01/2006"))
 
-	ent1.Open = 150
-	ent1.High = 180
-	ent1.Low = 145
-	ent1.Close = 180
-	ent1.VolumeTrade = 60
-	id, err = ent1.Insert()
-
-	if id == "" {
-		t.Error(err.Error())
-	}
-
-
-	ent2 := entity.StockCloseEnt{}
-	ent2.StockDate  = time.Now().AddDate(0,0,2)
-	fmt.Println(ent2.StockDate.Format("02/01/2006"))
-
-	ent2.Open = 230
-	ent2.High = 265
-	ent2.Low = 223
-	ent2.Close = 260
-	ent2.VolumeTrade = 30
-	id, err = ent2.Insert()
+	model1.Open = 150
+	model1.High = 180
+	model1.Low = 145
+	model1.Close = 180
+	model1.VolumeTrade = 60
+	id, err = model1.Add()
 
 	if id == "" {
 		t.Error(err.Error())
 	}
 
-	stocks := ent2.GetList()
-	if len(stocks) != 3 {
+
+	model2 := StockCloseModel{}
+	model2.StockDate  = time.Now().AddDate(0,0,2)
+	fmt.Println(model2.StockDate.Format("02/01/2006"))
+
+	model2.Open = 230
+	model2.High = 265
+	model2.Low = 223
+	model2.Close = 260
+	model2.VolumeTrade = 30
+	id, err = model2.Add()
+
+	if id == "" {
+		t.Error(err.Error())
+	}
+
+	stocks := model2.List()
+	if len(stocks.Models) != 3 {
 		t.Error("Invalid Stocks.Length=0")
 	}
 
 
-	p := stocks[2]
+	p := stocks.Models[2]
 	if p.Action == "S" && p.Max == true {
 		t.Log("Calc Profit Success." + fmt.Sprint(p))
 

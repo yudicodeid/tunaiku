@@ -6,6 +6,10 @@ import (
 	"errors"
 )
 
+
+var stockCloseDb StockCloseDb = CreateStockCloseDb()
+
+
 type StockCloseModel struct {
 
 	ID string
@@ -30,7 +34,6 @@ type StockCloseModelList struct {
 func (model StockCloseModel) modelToEnt() (StockCloseEnt, error){
 
 	ent := StockCloseEnt{}
-	ent.ID = uuid.New().String()
 	ent.StockDate = model.StockDate
 	ent.Open = model.Open
 	ent.High = model.High
@@ -42,7 +45,7 @@ func (model StockCloseModel) modelToEnt() (StockCloseEnt, error){
 
 }
 
-func (model *StockCloseModel) entToModel(ent StockCloseEnt) error {
+func (model *StockCloseModel) entToModel(ent StockCloseEnt) {
 
 	model.ID = ent.ID
 	model.StockDate = ent.StockDate
@@ -61,7 +64,6 @@ func (model *StockCloseModel) entToModel(ent StockCloseEnt) error {
 
 	model.Max = ent.Max
 
-	return nil
 
 }
 
@@ -105,11 +107,11 @@ func (model StockCloseModel) validateInsert()  error {
 }
 
 
-func (model StockCloseModel) Add() (error){
+func (model StockCloseModel) Add() (string, error){
 
 	err := model.validateInsert()
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	stock,  found := stockCloseDb.FindByDate(model.StockDate.Year(),
@@ -118,12 +120,13 @@ func (model StockCloseModel) Add() (error){
 
 	ent, err := model.modelToEnt()
 	if err!= nil {
-		return err
+		return "", err
 	}
 
 	updated := false
 
 	if found == true {
+
 		ent.ID = stock.ID
 		updated = stockCloseDb.Update(ent)
 
@@ -134,19 +137,25 @@ func (model StockCloseModel) Add() (error){
 
 		}
 
+		return ent.ID, nil
+
 	} else {
 
+		ent.ID = uuid.New().String()
 		err = stockCloseDb.Add(ent)
 		if err!= nil {
-			return err
+			return "", err
 		} else {
+
 			profitModel := ProfitModel{}
 			profitModel.AnalyzeProfits()
+
+			return ent.ID, nil
 		}
 
 	}
 
-	return nil
+	return "", nil
 }
 
 
@@ -197,16 +206,16 @@ func (model StockCloseModel) TruncateData() {
 
 
 
-func (ent StockCloseEnt) Find() (StockCloseEnt, error) {
+func (model StockCloseModel) Find() (StockCloseModel, error) {
 
-	found, t := stockCloseDb.Find(ent.ID)
-	var e = StockCloseEnt{}
+	found, ent := stockCloseDb.Find(model.ID)
+	var e = StockCloseModel{}
 
 	if found == false {
-		return  e, errors.New("Cannot find Stock wtih ID:" + ent.ID)
-	} else {
+		return  e, errors.New("Cannot find Stock wtih ID:" + model.ID)
 
-		e.mapFromTable(t)
+	} else {
+		model.entToModel(ent)
 		return e, nil
 	}
 

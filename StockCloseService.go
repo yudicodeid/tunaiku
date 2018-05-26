@@ -10,8 +10,6 @@ import (
 )
 
 
-var stockCloseDb StockCloseDb = CreateStockCloseDb()
-
 type StockCloseService struct {
 	model StockCloseModel
 }
@@ -39,7 +37,7 @@ func (svc StockCloseService) Post(w http.ResponseWriter, r *http.Request) {
 	svc.model.Close, _ = strconv.Atoi(close)
 	svc.model.VolumeTrade, _ = strconv.Atoi(vol)
 
-	err := svc.model.Add()
+	_ , err := svc.model.Add()
 	response :=ResponseModel{}
 	if err!= nil {
 		response.Error(err)
