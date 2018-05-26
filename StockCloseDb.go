@@ -179,6 +179,32 @@ func (db *StockCloseDb) Update(ent StockCloseEnt) bool {
 
 
 
+func (db *StockCloseDb) Delete(id string) bool {
+
+	var stacks []StockCloseEnt
+	found := false
+
+	for _, v := range db.Data {
+		if v.ID == id {
+			found = true
+		} else {
+			stacks = append(stacks, v)
+		}
+	}
+
+	if found {
+		db.Data = stacks
+		rows := db.RowsToString()
+		db.File.Update(rows)
+	}
+
+	return found
+
+}
+
+
+
+
 type StockCloseByDate [] StockCloseEnt
 func (a StockCloseByDate) Len() int { return len(a) }
 func (a StockCloseByDate) Swap(i, j int) { a[i], a[j] = a[j], a[i] }

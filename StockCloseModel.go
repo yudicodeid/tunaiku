@@ -167,3 +167,25 @@ func (model StockCloseModel) List() (StockCloseModelList)  {
 
 	return modelList
 }
+
+
+func (model StockCloseModel) Delete() (bool, error) {
+
+	if model.ID == "" {
+		return false, errors.New("Invalid ID")
+	}
+
+	b := stockCloseDb.Delete(model.ID)
+
+	if b == true {
+
+		profitModel := ProfitModel{}
+		profitModel.AnalyzeProfits()
+
+		return true, nil
+	} else {
+		return false, errors.New("failed to delete data")
+	}
+
+
+}
