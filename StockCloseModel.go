@@ -3,13 +3,18 @@ package main
 import "time"
 
 type StockCloseModel struct {
+
+	ResponseModel
+
 	ID string
 	StockDate time.Time
 	Open int
 	High int
 	Low int
 	Close int
+	VolumeTrade int
 	Action string
+
 }
 
 var stockCloseDb StockCloseDb = StockCloseDb{}
@@ -57,7 +62,7 @@ func (model StockCloseModel) Add() (error){
 	return nil
 }
 
-func (model StockCloseModel) List() ([]StockCloseModel, error)  {
+func (model StockCloseModel) List() ([]StockCloseModel)  {
 
 	var models []StockCloseModel
 	entities := stockCloseDb.List()
@@ -70,5 +75,5 @@ func (model StockCloseModel) List() ([]StockCloseModel, error)  {
 		models = append(models, model)
 	}
 
-	return models, nil
+	return models
 }

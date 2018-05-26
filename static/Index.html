@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Stock Close List
+    </title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#stockCloseModal">
+            (+) Add
+        </button>
+
+
+        <table class="table table-bordered">
+            <thead>
+            <th></th>
+            <th>Date</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Volume Trade</th>
+            <th>Action</th>
+            </thead>
+
+            <tbody class="stock-close-list">
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="stockCloseModal" tabindex="-1" role="dialog" aria-labelledby="stockCloseModelLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="stockCloseModelLabel">Stock Close</h4>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+
+                    <div class="form-group">
+                        <label for="StockDate">Stock Date</label>
+                        <input type="date" class="form-control" id="StockDate"  name="StockDate" placeholder="Stock Date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Open">Open</label>
+                        <input type="number" class="form-control" id="Open"  name="StockDate" placeholder="Open" step="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="High">High</label>
+                        <input type="number" class="form-control" id="High"  name="StockDate"  placeholder="High"  step="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Low">Low</label>
+                        <input type="number" class="form-control" id="Low"  name="StockDate" placeholder="Low"  step="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Close">Close</label>
+                        <input type="number" class="form-control" id="Close"  name="StockDate"  placeholder="Close"  step="10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="VolumeTrade">Volume Trade</label>
+                        <input type="number" class="form-control" id="VolumeTrade"  name="VolumeTrade"  placeholder="Volume Trade">
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-add-stock-close" >Submit</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/static/jquery/jquery-1.11.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/StockClose.js"></script>
+
+
+<script>
+
+    $(document).ready(function(){
+
+        this.app = {};
+
+        var stockClose = new app.StockClose();
+        stockClose.list();
+
+    });
+</script>
+
+</body>
+</html>

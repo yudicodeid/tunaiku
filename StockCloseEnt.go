@@ -10,6 +10,7 @@ type StockCloseEnt struct {
 	High int
 	Low int
 	Close int
+	VolumeTrade int
 	Action string
 
 }
