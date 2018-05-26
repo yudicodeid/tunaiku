@@ -45,7 +45,7 @@ var app = this.app = this.app || {};
                     console.log(d);
                     if(d.Status == true) {
 
-                        that.data = d.Entities;
+                        that.data = d.Models;
                         //that.onListUpdated(that.data);
 
                         that.render();
@@ -136,7 +136,7 @@ var app = this.app = this.app || {};
                 var d = this.data[i];
                 str +='<tr data-id="' + d['ID'] + '">' +
                     '<td><button class="btn btn-danger btn-delete-stock" data-id="' + d['ID'] + '">Delete</button></td>' +
-                    '<td>' + d['StockDate'] + '</td>' +
+                    '<td>' + d['StockDateString'] + '</td>' +
                     '<td>' + d['Open'] + '</td>' +
                     '<td>' + d['High'] + '</td>' +
                     '<td>' + d['Low'] + '</td>' +

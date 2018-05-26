@@ -5,6 +5,8 @@ import (
 	"strings"
 	"encoding/json"
 	"html/template"
+	"time"
+	"strconv"
 )
 
 type StockCloseService struct {
@@ -19,6 +21,20 @@ func CreateStockCloseService() StockCloseService {
 
 
 func (svc StockCloseService) Post(w http.ResponseWriter, r *http.Request) {
+
+	stockDate := r.PostFormValue("StockDate")
+	open := r.PostFormValue("Open")
+	high := r.PostFormValue("High")
+	low := r.PostFormValue("Low")
+	close := r.PostFormValue("Close")
+	vol := r.PostFormValue("VolumeTrade")
+
+	svc.model.StockDate, _ = time.Parse("2006-01-02",stockDate)
+	svc.model.Open, _ = strconv.Atoi(open)
+	svc.model.High, _ = strconv.Atoi(high)
+	svc.model.Low, _ = strconv.Atoi(low)
+	svc.model.Close, _ = strconv.Atoi(close)
+	svc.model.VolumeTrade, _ = strconv.Atoi(vol)
 
 	err := svc.model.Add()
 	response :=ResponseModel{}
@@ -36,7 +52,7 @@ func (svc StockCloseService) Index(w http.ResponseWriter, r *http.Request) {
 	method := strings.ToUpper(r.Method)
 	if method == "GET" {
 
-		t, _ := template.ParseFiles("/static")
+		t, _ := template.ParseFiles("static/Index.html")
 		t.Execute(w,nil)
 
 	} else if method == "POST" {
@@ -49,8 +65,8 @@ func (svc StockCloseService) List(w http.ResponseWriter, r *http.Request) {
 
 	method := strings.ToUpper(r.Method)
 	if method == "GET" {
-		models := svc.model.List()
-		json.NewEncoder(w).Encode(models)
+		modelList := svc.model.List()
+		json.NewEncoder(w).Encode(modelList)
 	}
 
 }
