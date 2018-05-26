@@ -13,12 +13,12 @@ Make auto decision buy-sell for maximum profit for stock close
 
 ## Getting Started
 * run > from GoLand JetBrains
-
-* http:cd ..//localhost:5001
+* Open Browser
+* http://localhost:5001
 
 
 ## Hello World Test
-* Open Browser
+
 * http://localhost:5001/hello
 
 
