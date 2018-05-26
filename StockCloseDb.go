@@ -109,7 +109,7 @@ func (db *StockCloseDb) UpdateAction(id string, action string) {
 		}
 	}
 
-	db.File.Update(db.RowsToString())
+	//db.File.Update(db.RowsToString())
 }
 
 
@@ -122,7 +122,7 @@ func (db *StockCloseDb) UpdateMax(id string) {
 		}
 	}
 
-	db.File.Update(db.RowsToString())
+	//db.File.Update(db.RowsToString())
 
 }
 
@@ -223,6 +223,9 @@ func (db StockCloseDb) Find(id string) (bool, StockCloseEnt) {
 
 }
 
+func (db StockCloseDb) SyncAll() {
+	db.File.Update(db.RowsToString())
+}
 
 
 type StockCloseByDate [] StockCloseEnt

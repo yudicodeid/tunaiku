@@ -142,8 +142,9 @@ func (f *StockCloseFile) Update(rows []string) (bool,error) {
 
 func (f *StockCloseFile) Truncate() {
 
-	file, _ :=os.OpenFile(f.getFullPath(), os.O_TRUNC, 0666)
+	file, _ :=os.OpenFile(f.getFullPath(), os.O_TRUNC | os.O_WRONLY, 0666)
 	defer file.Close()
+	file.WriteString("")
 
 }
 

@@ -9,6 +9,8 @@ import (
 
 type ProfitModel struct {
 
+	BaseModel
+
 	BuyID      string
 	BuyDate    time.Time
 	SellID     string
@@ -21,20 +23,26 @@ type ProfitModel struct {
 
 }
 
-func (p ProfitModel) Log() {
+func CreateProfitModel(db *StockCloseDb) ProfitModel{
+	model := ProfitModel{}
+	model.Db = db
+	return model
+}
 
-	fmt.Print("BuyDate:" + p.BuyDate.Format("2006-01-02") + ",")
-	fmt.Print("BuyPrice:" + strconv.Itoa(p.BuyPrice) + ",")
-	fmt.Print("BuyVolume:" + strconv.Itoa(p.BuyVolume) + ",")
-	fmt.Println("BuyAmount:" + strconv.Itoa(p.BuyVolume*p.BuyPrice) + "")
+func (model ProfitModel) Log() {
+
+	fmt.Print("BuyDate:" + model.BuyDate.Format("2006-01-02") + ",")
+	fmt.Print("BuyPrice:" + strconv.Itoa(model.BuyPrice) + ",")
+	fmt.Print("BuyVolume:" + strconv.Itoa(model.BuyVolume) + ",")
+	fmt.Println("BuyAmount:" + strconv.Itoa(model.BuyVolume*model.BuyPrice) + "")
 
 
-	fmt.Print("SellDate:" + p.SellDate.Format("2006-01-02") + ",")
-	fmt.Print("SellPrice:" + strconv.Itoa(p.SellPrice) + ",")
-	fmt.Print("SellVolume:" + strconv.Itoa(p.SellVolume) + ",")
-	fmt.Println("SellAmount:" + strconv.Itoa(p.SellVolume*p.SellPrice) + "")
+	fmt.Print("SellDate:" + model.SellDate.Format("2006-01-02") + ",")
+	fmt.Print("SellPrice:" + strconv.Itoa(model.SellPrice) + ",")
+	fmt.Print("SellVolume:" + strconv.Itoa(model.SellVolume) + ",")
+	fmt.Println("SellAmount:" + strconv.Itoa(model.SellVolume*model.SellPrice) + "")
 
-	fmt.Println("Profit: " + strconv.Itoa(p.Value))
+	fmt.Println("Profit: " + strconv.Itoa(model.Value))
 	fmt.Println("")
 
 }
@@ -47,7 +55,7 @@ func (a Profits) Less(i, j int) bool {
 	return a[i].Value > a[j].Value
 }
 
-func (p ProfitModel) findLowest(rows []StockCloseEnt) int {
+func (model ProfitModel) findLowest(rows []StockCloseEnt) int {
 
 	min := 0
 	i:=0
@@ -77,7 +85,7 @@ func (p ProfitModel) findLowest(rows []StockCloseEnt) int {
 
 
 
-func (p ProfitModel) calcCombination(rows []StockCloseEnt) Profits {
+func (model ProfitModel) calcCombination(rows []StockCloseEnt) Profits {
 
 	var profits []ProfitModel
 
@@ -128,7 +136,7 @@ func (p ProfitModel) calcCombination(rows []StockCloseEnt) Profits {
 
 	if len(profits) == 0 {
 
-		lowestIndex := p.findLowest(rows)
+		lowestIndex := model.findLowest(rows)
 
 		var p = ProfitModel {
 			BuyID:     rows[lowestIndex].ID,
@@ -146,16 +154,16 @@ func (p ProfitModel) calcCombination(rows []StockCloseEnt) Profits {
 }
 
 
-func (p ProfitModel) getPossibleProfits() ([]ProfitModel, bool) {
+func (model *ProfitModel) getPossibleProfits() ([]ProfitModel, bool) {
 
 	var profits []ProfitModel
-	lenStock := len(stockCloseDb.Data)
+	lenStock := len(model.Db.Data)
 
 	if lenStock > 0 {
 
-		stockCloseDb.SortByDate()
+		model.Db.SortByDate()
 
-		profits = p.calcCombination(stockCloseDb.Data)
+		profits = model.calcCombination(model.Db.Data)
 
 		if len(profits)> 0 {
 
@@ -179,7 +187,7 @@ func (p ProfitModel) getPossibleProfits() ([]ProfitModel, bool) {
 
 
 
-func (p ProfitModel) sliceInvalidProfits(profits []ProfitModel) []ProfitModel {
+func (model ProfitModel) sliceInvalidProfits(profits []ProfitModel) []ProfitModel {
 
 	var cleanProfits []ProfitModel
 
@@ -206,22 +214,22 @@ func (p ProfitModel) sliceInvalidProfits(profits []ProfitModel) []ProfitModel {
 }
 
 
-func (p ProfitModel) AnalyzeProfits() {
+func (model *ProfitModel) AnalyzeProfits() {
 
-	stockCloseDb.ResetAction()
-	stockCloseDb.ResetMax()
+	model.Db.ResetAction()
+	model.Db.ResetMax()
 
-	profits, b := p.getPossibleProfits()
+	profits, b := model.getPossibleProfits()
 	if b == true {
 
-		cleanProfits := p.sliceInvalidProfits(profits)
+		cleanProfits := model.sliceInvalidProfits(profits)
 
 		maxProfit := cleanProfits[0]
-		stockCloseDb.UpdateAction(maxProfit.BuyID, "B")
+		model.Db.UpdateAction(maxProfit.BuyID, "B")
 
 		if maxProfit.SellID != "" {
-			stockCloseDb.UpdateAction(maxProfit.SellID, "S")
-			stockCloseDb.UpdateMax(maxProfit.SellID)
+			model.Db.UpdateAction(maxProfit.SellID, "S")
+			model.Db.UpdateMax(maxProfit.SellID)
 		}
 
 		if len(cleanProfits) >0 {
@@ -229,10 +237,12 @@ func (p ProfitModel) AnalyzeProfits() {
 			for a:=1; a<len(cleanProfits); a++ {
 
 				profit := cleanProfits[a]
-				stockCloseDb.UpdateAction(profit.SellID, "S")
+				model.Db.UpdateAction(profit.SellID, "S")
 			}
 
 		}
+
+		model.Db.SyncAll()
 
 	}
 

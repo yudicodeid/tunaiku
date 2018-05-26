@@ -7,10 +7,9 @@ import (
 )
 
 
-var stockCloseDb StockCloseDb = CreateStockCloseDb()
-
-
 type StockCloseModel struct {
+
+	BaseModel
 
 	ID string
 	StockDate time.Time
@@ -23,6 +22,12 @@ type StockCloseModel struct {
 	Action string
 	Max bool
 
+}
+
+func CreateStockCloseModel(db *StockCloseDb) StockCloseModel{
+	model := StockCloseModel{}
+	model.Db = db
+	return model
 }
 
 type StockCloseModelList struct {
@@ -107,14 +112,14 @@ func (model StockCloseModel) validateInsert()  error {
 }
 
 
-func (model StockCloseModel) Add() (string, error){
+func (model *StockCloseModel) Add() (string, error){
 
 	err := model.validateInsert()
 	if err != nil {
 		return "", err
 	}
 
-	stock,  found := stockCloseDb.FindByDate(model.StockDate.Year(),
+	stock,  found := model.Db.FindByDate(model.StockDate.Year(),
 		model.StockDate.Month(),
 		model.StockDate.Day())
 
@@ -128,11 +133,11 @@ func (model StockCloseModel) Add() (string, error){
 	if found == true {
 
 		ent.ID = stock.ID
-		updated = stockCloseDb.Update(ent)
+		updated = model.Db.Update(ent)
 
 		if updated == true {
 
-			profitModel := ProfitModel{}
+			profitModel := CreateProfitModel(model.Db)
 			profitModel.AnalyzeProfits()
 
 		}
@@ -142,12 +147,12 @@ func (model StockCloseModel) Add() (string, error){
 	} else {
 
 		ent.ID = uuid.New().String()
-		err = stockCloseDb.Add(ent)
+		err = model.Db.Add(ent)
 		if err!= nil {
 			return "", err
 		} else {
 
-			profitModel := ProfitModel{}
+			profitModel := CreateProfitModel(model.Db)
 			profitModel.AnalyzeProfits()
 
 			return ent.ID, nil
@@ -164,7 +169,7 @@ func (model StockCloseModel) List() (StockCloseModelList)  {
 	modelList := StockCloseModelList{}
 	modelList.Success("")
 
-	entities := stockCloseDb.List()
+	entities := model.Db.List()
 
 	for _, ent := range entities {
 
@@ -178,17 +183,17 @@ func (model StockCloseModel) List() (StockCloseModelList)  {
 }
 
 
-func (model StockCloseModel) Delete() (bool, error) {
+func (model *StockCloseModel) Delete() (bool, error) {
 
 	if model.ID == "" {
 		return false, errors.New("Invalid ID")
 	}
 
-	b := stockCloseDb.Delete(model.ID)
+	b := model.Db.Delete(model.ID)
 
 	if b == true {
 
-		profitModel := ProfitModel{}
+		profitModel := CreateProfitModel(model.Db)
 		profitModel.AnalyzeProfits()
 
 		return true, nil
@@ -200,15 +205,15 @@ func (model StockCloseModel) Delete() (bool, error) {
 }
 
 
-func (model StockCloseModel) TruncateData() {
-	stockCloseDb.TruncateData()
+func (model *StockCloseModel) TruncateData() {
+	model.Db.TruncateData()
 }
 
 
 
 func (model StockCloseModel) Find() (StockCloseModel, error) {
 
-	found, ent := stockCloseDb.Find(model.ID)
+	found, ent := model.Db.Find(model.ID)
 	var e = StockCloseModel{}
 
 	if found == false {

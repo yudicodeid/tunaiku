@@ -14,9 +14,10 @@ type StockCloseService struct {
 	model StockCloseModel
 }
 
-func CreateStockCloseService() StockCloseService {
+func CreateStockCloseService(db *StockCloseDb) StockCloseService {
+
 	svc := StockCloseService{}
-	svc.model = StockCloseModel{}
+	svc.model = CreateStockCloseModel(db)
 	return svc
 }
 

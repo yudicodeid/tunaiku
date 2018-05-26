@@ -7,10 +7,12 @@ import (
 	"fmt"
 )
 
-
 func TestValidate(t *testing.T) {
 
+	db := CreateStockCloseDb()
+
 	model := StockCloseModel{}
+	model.Db = &db
 	model.TruncateData()
 
 	model.StockDate = time.Now()
@@ -33,7 +35,10 @@ func TestValidate(t *testing.T) {
 
 func TestInsert(t *testing.T) {
 
+	db := CreateStockCloseDb()
+
 	model := StockCloseModel{}
+	model.Db = &db
 	model.TruncateData()
 
 	model.StockDate = time.Now()
@@ -64,17 +69,20 @@ func TestInsert(t *testing.T) {
 
 func TestMaxProfit(t *testing.T) {
 
+	db := CreateStockCloseDb()
+
 	model := StockCloseModel{}
+	model.Db = &db
 	model.TruncateData()
 
 	model.StockDate = time.Now()
 	fmt.Println(model.StockDate.Format("02/01/2006"))
 
-	model.Open = 110
-	model.High = 111
-	model.Low = 99
-	model.Close = 100
-	model.VolumeTrade = 50
+	model.Open = 100
+	model.High = 200
+	model.Low = 150
+	model.Close = 200
+	model.VolumeTrade = 1000
 	id, err := model.Add()
 	if id == "" {
 		t.Error(err.Error())
@@ -82,14 +90,15 @@ func TestMaxProfit(t *testing.T) {
 
 
 	model1 := StockCloseModel{}
+	model1.Db = &db
 	model1.StockDate = time.Now().AddDate(0,0,1)
 	fmt.Println(model1.StockDate.Format("02/01/2006"))
 
-	model1.Open = 150
-	model1.High = 180
-	model1.Low = 145
-	model1.Close = 180
-	model1.VolumeTrade = 60
+	model1.Open = 200
+	model1.High = 300
+	model1.Low = 250
+	model1.Close = 300
+	model1.VolumeTrade = 1000
 	id, err = model1.Add()
 
 	if id == "" {
@@ -98,14 +107,15 @@ func TestMaxProfit(t *testing.T) {
 
 
 	model2 := StockCloseModel{}
+	model2.Db = &db
 	model2.StockDate  = time.Now().AddDate(0,0,2)
 	fmt.Println(model2.StockDate.Format("02/01/2006"))
 
-	model2.Open = 230
-	model2.High = 265
-	model2.Low = 223
-	model2.Close = 260
-	model2.VolumeTrade = 30
+	model2.Open = 300
+	model2.High = 400
+	model2.Low = 350
+	model2.Close = 400
+	model2.VolumeTrade = 1000
 	id, err = model2.Add()
 
 	if id == "" {
@@ -119,7 +129,7 @@ func TestMaxProfit(t *testing.T) {
 
 
 	p := stocks.Models[2]
-	if p.Action == "S" && p.Max == true {
+	if p.Action == "Sell" && p.Max == true {
 		t.Log("Calc Profit Success." + fmt.Sprint(p))
 
 	} else {

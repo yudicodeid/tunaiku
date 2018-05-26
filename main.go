@@ -10,9 +10,12 @@ func hello(w http.ResponseWriter, _ *http.Request){
 	fmt.Fprintln(w,"Hello Tunaiku")
 }
 
-var stockCloseService StockCloseService = CreateStockCloseService()
+
 
 func main() {
+
+	db := CreateStockCloseDb()
+	stockCloseService := CreateStockCloseService(&db)
 
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/", stockCloseService.Index)
