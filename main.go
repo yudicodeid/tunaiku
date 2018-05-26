@@ -16,6 +16,7 @@ func main() {
 
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/", stockCloseService.Index)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	log.Println("Listening to port 5001. Access : http:/localhost:5001")
 	err := http.ListenAndServe(":5001", nil)

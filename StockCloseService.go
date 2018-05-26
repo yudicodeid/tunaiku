@@ -37,7 +37,7 @@ func (svc StockCloseService) Index(w http.ResponseWriter, r *http.Request) {
 	if method == "GET" {
 
 		t, _ := template.ParseFiles("/static")
-
+		t.Execute(w,nil)
 
 	} else if method == "POST" {
 		svc.Post(w, r)
