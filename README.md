@@ -5,6 +5,7 @@ Make auto decision buy-sell for maximum profit for stock close
 ### Prerequisites
 * Go SDK
 * JetBrains GoLand
+* go get github.com/google/uuid
 
 
 ## Editor
