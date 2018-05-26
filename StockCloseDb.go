@@ -3,15 +3,67 @@ package main
 import "sort"
 
 type StockCloseDb struct {
+	File StockCloseFile
 	Data []StockCloseEnt
 }
 
+
+func CreateStockCloseDb() StockCloseDb {
+
+	db := StockCloseDb{}
+	file, err := CreateStockCloseFile()
+
+	if err !=  nil {
+		panic(err)
+
+	} else {
+		db.File = file
+	}
+
+	return db
+}
+
+
 func (db *StockCloseDb) Add(ent StockCloseEnt) error {
+
+	db.File.Append(ent.ToString())
+
+
 	db.Data = append(db.Data, ent)
 	return nil
 }
 
+
+func (db *StockCloseDb) parseRowsFile() {
+
+	db.Data = []StockCloseEnt{}
+	rows := db.File.Rows
+
+	if len(rows) >0 {
+
+		for _, row := range rows {
+
+			ent := StockCloseEnt{}
+			e := ent.ParseRow(row)
+
+			if e!= nil {
+				panic(e)
+			}
+
+			db.Data = append(db.Data, ent)
+		}
+	}
+
+}
+
+
+
 func (db *StockCloseDb) List() []StockCloseEnt {
+
+	db.File.ReadAllStockFile()
+
+	db.parseRowsFile()
+
 	return db.Data
 }
 
@@ -54,9 +106,6 @@ func (db *StockCloseDb) UpdateMax(id string) {
 	}
 
 }
-
-
-
 
 
 type StockCloseByDate [] StockCloseEnt

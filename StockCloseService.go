@@ -10,7 +10,7 @@ import (
 )
 
 
-var stockCloseDb = StockCloseDb{}
+var stockCloseDb StockCloseDb = CreateStockCloseDb()
 
 type StockCloseService struct {
 	model StockCloseModel
