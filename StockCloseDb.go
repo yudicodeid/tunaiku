@@ -202,6 +202,26 @@ func (db *StockCloseDb) Delete(id string) bool {
 
 }
 
+func (db *StockCloseDb) TruncateData() {
+	db.File.Truncate()
+	db.Data = []StockCloseEnt{}
+}
+
+
+func (db StockCloseDb) Find(id string) (bool, StockCloseEnt) {
+
+	var row StockCloseEnt
+	var found = false
+	for _, v := range db.Data {
+		if v.ID == id {
+			row = v
+			found = true
+			break
+		}
+	}
+	return found, row
+
+}
 
 
 

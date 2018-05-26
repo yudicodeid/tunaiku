@@ -189,3 +189,25 @@ func (model StockCloseModel) Delete() (bool, error) {
 
 
 }
+
+
+func (model StockCloseModel) TruncateData() {
+	stockCloseDb.TruncateData()
+}
+
+
+
+func (ent StockCloseEnt) Find() (StockCloseEnt, error) {
+
+	found, t := stockCloseDb.Find(ent.ID)
+	var e = StockCloseEnt{}
+
+	if found == false {
+		return  e, errors.New("Cannot find Stock wtih ID:" + ent.ID)
+	} else {
+
+		e.mapFromTable(t)
+		return e, nil
+	}
+
+}
