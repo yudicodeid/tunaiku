@@ -27,6 +27,7 @@ func CreateStockCloseDb() StockCloseDb {
 }
 
 
+
 func (db *StockCloseDb) Add(ent StockCloseEnt) error {
 
 	db.File.Append(ent.ToString())

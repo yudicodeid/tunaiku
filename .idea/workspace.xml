@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a610d7f3-36cb-4630-bbf4-4b5e49fd0f68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/BaseModel.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfitModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/ProfitModel.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StockCloseDb.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseDb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCloseFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseFile.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCloseModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCloseModel_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseModel_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StockCloseService.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -24,7 +19,7 @@
       <file leaf-file-name="StockCloseModel.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="3009">
               <caret line="181" selection-start-line="181" selection-end-line="181" />
             </state>
           </provider>
@@ -42,7 +37,7 @@
       <file leaf-file-name="StockCloseEnt.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseEnt.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="1105">
               <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#14#54#0" expanded="true" />
@@ -54,8 +49,8 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="e#14#50#0" expanded="true" />
               </folding>
@@ -63,20 +58,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockCloseService.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StockCloseService.go">
+      <file leaf-file-name="StockCloseIDb.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StockCloseIDb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="34">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockCloseModel_test.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StockCloseService.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StockCloseService.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockCloseModel_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseModel_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+            <state relative-caret-position="17">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="238">
+                <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -84,17 +100,8 @@
       <file leaf-file-name="ProfitModel.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProfitModel.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="4063">
               <caret line="244" selection-start-line="244" selection-end-line="244" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.go" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/testing/testing.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="778" selection-start-line="778" selection-end-line="778" />
             </state>
           </provider>
         </entry>
@@ -102,20 +109,11 @@
       <file leaf-file-name="StockCloseDb.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="476">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#14#40#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StockCloseFile.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StockCloseFile.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -152,14 +150,14 @@
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/test/StockCloseModel_test.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/StockCloseDb.go" />
         <option value="$PROJECT_DIR$/StockCloseFile.go" />
         <option value="$PROJECT_DIR$/BaseModel.go" />
         <option value="$PROJECT_DIR$/ProfitModel.go" />
         <option value="$PROJECT_DIR$/StockCloseModel.go" />
-        <option value="$PROJECT_DIR$/StockCloseService.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/StockCloseModel_test.go" />
+        <option value="$PROJECT_DIR$/StockCloseDb.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/StockCloseService.go" />
       </list>
     </option>
   </component>
@@ -186,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,7 +196,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build tunaiku-golang">
+  <component name="RunManager" selected="Go Test.TestValidate in tunaiku-golang">
     <configuration name="go build tunaiku-golang" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="tunaiku-golang" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -284,17 +282,14 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestValidate in tunaiku-golang" />
         <item itemvalue="Go Build.go build tunaiku-golang" />
         <item itemvalue="Go Test.TestMaxProfit in tunaiku-golang" />
         <item itemvalue="Go Test.TestInsert in tunaiku-golang" />
-        <item itemvalue="Go Test.TestValidate in tunaiku-golang" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestMaxProfit_in_tunaiku-golang - 2018.05.27 at 03h 23m 38s.xml">
-      <configuration name="TestMaxProfit in tunaiku-golang" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestMaxProfit_in_tunaiku-golang - 2018.05.27 at 03h 26m 16s.xml">
       <configuration name="TestMaxProfit in tunaiku-golang" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -322,18 +317,21 @@
     <history-entry file="TestMaxProfit_in_tunaiku-golang - 2018.05.27 at 03h 43m 49s.xml">
       <configuration name="TestMaxProfit in tunaiku-golang" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestValidate_in_tunaiku-golang - 2018.05.27 at 03h 47m 30s.xml">
+      <configuration name="TestValidate in tunaiku-golang" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.41616163" visible="true" weight="0.18381241" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.41616163" visible="true" weight="0.18683812" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50064266" side_tool="true" weight="0.3292683" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49871466" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49871466" weight="0.32838285" />
       <window_info x="1222" y="-740" width="282" height="738" id="Structure" order="2" sideWeight="0.5838384" side_tool="true" weight="0.18123393" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4993573" weight="0.3292683" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -342,10 +340,10 @@
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.6097561" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.6097561" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +406,9 @@
     <MESSAGE value="test success" />
     <MESSAGE value="update README" />
     <MESSAGE value="update README lagi" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README lagi" />
+    <MESSAGE value="change Db as dependency injection" />
+    <MESSAGE value="update unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="update unit test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -417,13 +417,11 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/StockCloseModel.go</url>
           <line>215</line>
-          <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/StockCloseModel_test.go</url>
-          <line>85</line>
-          <properties />
+          <line>78</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
@@ -431,6 +429,85 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseModel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseEnt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#14#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="e#14#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfitModel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4148">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13226">
+          <caret line="778" selection-start-line="778" selection-end-line="778" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseFile.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseModel_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../webstock/service/StockCloseService.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
@@ -578,43 +655,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseIDb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseFile.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="2431">
           <caret line="148" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/Go/src/testing/testing.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="12954">
           <caret line="778" selection-start-line="778" selection-end-line="778" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseEnt.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="1105">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#14#54#0" expanded="true" />
@@ -629,51 +686,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <element signature="e#14#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseService.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#14#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="3009">
           <caret line="181" selection-start-line="181" selection-end-line="181" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProfitModel.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="4063">
           <caret line="244" selection-start-line="244" selection-end-line="244" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseModel_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+        <state relative-caret-position="17">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseIDb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#14#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

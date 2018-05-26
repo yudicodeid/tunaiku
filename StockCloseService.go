@@ -22,6 +22,8 @@ func CreateStockCloseService(db *StockCloseDb) StockCloseService {
 }
 
 
+
+
 func (svc StockCloseService) Post(w http.ResponseWriter, r *http.Request) {
 
 	stockDate := r.PostFormValue("StockDate")

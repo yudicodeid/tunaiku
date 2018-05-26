@@ -11,7 +11,6 @@ func hello(w http.ResponseWriter, _ *http.Request){
 }
 
 
-
 func main() {
 
 	db := CreateStockCloseDb()
