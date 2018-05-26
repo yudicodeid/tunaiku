@@ -6,11 +6,12 @@ import (
 )
 
 type StockCloseService struct {
-
+	model StockCloseModel
 }
 
 func CreateStockCloseService() StockCloseService {
 	svc := StockCloseService{}
+	svc.model = StockCloseModel{}
 	return svc
 }
 
