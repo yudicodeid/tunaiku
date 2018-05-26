@@ -16,6 +16,7 @@ type StockCloseModel struct {
 	Close int
 	VolumeTrade int
 	Action string
+	Max bool
 
 }
 
@@ -24,7 +25,6 @@ type StockCloseModelList struct {
 	Models []StockCloseModel
 }
 
-var stockCloseDb = StockCloseDb{}
 
 func (model StockCloseModel) modelToEnt() (StockCloseEnt, error){
 
@@ -51,7 +51,14 @@ func (model *StockCloseModel) entToModel(ent StockCloseEnt) error {
 	model.Low = ent.Low
 	model.Close = ent.Close
 	model.VolumeTrade = ent.VolumeTrade
-	model.Action = ent.Action
+
+	if ent.Action == "B" {
+		model.Action = "Buy"
+	} else if ent.Action == "S" {
+		model.Action = "Sell"
+	}
+
+	model.Max = ent.Max
 
 	return nil
 
@@ -67,6 +74,10 @@ func (model StockCloseModel) Add() (error){
 	err = stockCloseDb.Add(ent)
 	if err!= nil {
 		return err
+	} else {
+
+		profitModel := ProfitModel{}
+		profitModel.AnalyzeProfits()
 	}
 
 	return nil

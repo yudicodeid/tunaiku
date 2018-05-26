@@ -12,5 +12,6 @@ type StockCloseEnt struct {
 	Close int
 	VolumeTrade int
 	Action string
+	Max bool
 
 }

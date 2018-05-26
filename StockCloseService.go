@@ -9,6 +9,9 @@ import (
 	"strconv"
 )
 
+
+var stockCloseDb = StockCloseDb{}
+
 type StockCloseService struct {
 	model StockCloseModel
 }
