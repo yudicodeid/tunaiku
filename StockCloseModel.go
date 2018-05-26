@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"time"
+	"github.com/google/uuid"
+)
 
 type StockCloseModel struct {
 
@@ -26,7 +29,7 @@ var stockCloseDb = StockCloseDb{}
 func (model StockCloseModel) modelToEnt() (StockCloseEnt, error){
 
 	ent := StockCloseEnt{}
-	ent.ID = model.ID
+	ent.ID = uuid.New().String()
 	ent.StockDate = model.StockDate
 	ent.Open = model.Open
 	ent.High = model.High
