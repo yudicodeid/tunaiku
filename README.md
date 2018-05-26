@@ -13,13 +13,19 @@ Make auto decision buy-sell for maximum profit for stock close
 
 
 ## Getting Started
-* run > from GoLand JetBrains
+* Run from GoLand JetBrains
+
 OR
 
 (windows)
-cd %GOPATH%/src/tunaiku-golang 
->go build
+
+> cd %GOPATH%/src/tunaiku-golang
+ 
+> go build
+
 >tunaiku-golang.exe
+
+
 
 * Open Browser
 * http://localhost:5001
