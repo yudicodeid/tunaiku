@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 	"github.com/google/uuid"
+	"errors"
 )
 
 type StockCloseModel struct {
@@ -64,20 +65,85 @@ func (model *StockCloseModel) entToModel(ent StockCloseEnt) error {
 
 }
 
+func (model StockCloseModel) validateInsert()  error {
+
+	currentTime := time.Now()
+	elapsed := currentTime.Sub(model.StockDate)
+
+	h := int(elapsed.Hours()/24)
+
+	if h > 0 {
+		return errors.New("stock Date must be greater than or equals to Today's date")
+	}
+
+	if model.Open ==0 {
+		return errors.New("Invalid BuyPrice value")
+	}
+
+	if model.Close == 0 {
+		return errors.New("Invalid SellPrice value")
+	}
+
+	if model.High ==0 {
+		return errors.New("Invalid High value")
+	}
+
+	if model.Low ==0 {
+		return errors.New("Invalid Low value")
+	}
+
+	if model.High <= model.Low {
+		return errors.New("High must be greater than Low")
+	}
+
+	if model.Close > model.High || model.Close < model.Low {
+		return errors.New("Close must be between High and Low")
+	}
+
+	return nil
+
+}
+
+
 func (model StockCloseModel) Add() (error){
+
+	err := model.validateInsert()
+	if err != nil {
+		return err
+	}
+
+	stock,  found := stockCloseDb.FindByDate(model.StockDate.Year(),
+		model.StockDate.Month(),
+		model.StockDate.Day())
 
 	ent, err := model.modelToEnt()
 	if err!= nil {
 		return err
 	}
 
-	err = stockCloseDb.Add(ent)
-	if err!= nil {
-		return err
+	updated := false
+
+	if found == true {
+		ent.ID = stock.ID
+		updated = stockCloseDb.Update(ent)
+
+		if updated == true {
+
+			profitModel := ProfitModel{}
+			profitModel.AnalyzeProfits()
+
+		}
+
 	} else {
 
-		profitModel := ProfitModel{}
-		profitModel.AnalyzeProfits()
+		err = stockCloseDb.Add(ent)
+		if err!= nil {
+			return err
+		} else {
+			profitModel := ProfitModel{}
+			profitModel.AnalyzeProfits()
+		}
+
 	}
 
 	return nil

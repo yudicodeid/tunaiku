@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a610d7f3-36cb-4630-bbf4-4b5e49fd0f68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/StockCloseFile.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StockCloseDb.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseDb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCloseEnt.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseEnt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockCloseService.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StockCloseModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/StockCloseModel.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StockCloseModel.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StockCloseModel.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+            <state relative-caret-position="388">
+              <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
               <folding>
                 <element signature="e#14#58#0" expanded="true" />
               </folding>
@@ -30,11 +27,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockCloseFile.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfitModel.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProfitModel.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="228" column="37" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockCloseFile.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseFile.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="131">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#12#47#0" expanded="true" />
               </folding>
@@ -51,20 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="asm_amd64.s" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/runtime/asm_amd64.s">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="572" selection-start-line="572" selection-end-line="572" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StockCloseService.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseService.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="131">
+              <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
               <folding>
                 <element signature="e#14#47#0" expanded="true" />
               </folding>
@@ -75,8 +72,11 @@
       <file leaf-file-name="StockCloseDb.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="412">
+              <caret line="175" selection-start-line="175" selection-end-line="175" />
+              <folding>
+                <element signature="e#14#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,12 +141,12 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/static/StockClose.js" />
         <option value="$PROJECT_DIR$/ProfitModel.go" />
-        <option value="$PROJECT_DIR$/StockCloseModel.go" />
         <option value="$PROJECT_DIR$/StockCloseEnt.go" />
-        <option value="$PROJECT_DIR$/StockCloseDb.go" />
         <option value="$PROJECT_DIR$/StockCloseService.go" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/StockCloseFile.go" />
+        <option value="$PROJECT_DIR$/StockCloseDb.go" />
+        <option value="$PROJECT_DIR$/StockCloseModel.go" />
       </list>
     </option>
   </component>
@@ -241,7 +241,7 @@
     <frame x="-91" y="-908" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.41616163" visible="true" weight="0.18123393" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.41616163" visible="true" weight="0.18123393" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.6097561" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50064266" side_tool="true" weight="0.3292683" />
@@ -251,7 +251,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3292683" />
       <window_info x="1222" y="-740" width="282" height="738" id="Structure" order="2" sideWeight="0.5838384" side_tool="true" weight="0.18123393" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4993573" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" sideWeight="0.4993573" visible="true" weight="0.39972898" />
+      <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.4993573" visible="true" weight="0.22493225" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -314,50 +314,14 @@
     <MESSAGE value="add stock to memory" />
     <MESSAGE value="add uuid to ent.ID" />
     <MESSAGE value="analyze profit cuy.." />
-    <option name="LAST_COMMIT_MESSAGE" value="analyze profit cuy.." />
+    <MESSAGE value="enable write to file bro...." />
+    <MESSAGE value="update file when analyze profits" />
+    <option name="LAST_COMMIT_MESSAGE" value="update file when analyze profits" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseService.go</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseModel.go</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseDb.go</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseService.go</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseFile.go</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/StockCloseFile.go</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -392,16 +356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProfitModel.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="231" column="37" selection-start-line="231" selection-start-column="37" selection-end-line="231" selection-end-column="37" />
-          <folding>
-            <element signature="e#14#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseEnt.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -416,26 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
-          <folding>
-            <element signature="e#14#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseService.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="e#14#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -474,13 +408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -490,10 +417,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StockCloseFile.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="131">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#12#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+          <folding>
+            <element signature="e#14#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfitModel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="228" column="37" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseDb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
+          <folding>
+            <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StockCloseModel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#58#0" expanded="true" />
           </folding>
         </state>
       </provider>

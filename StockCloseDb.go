@@ -1,6 +1,9 @@
 package main
 
-import "sort"
+import (
+	"sort"
+	"time"
+)
 
 type StockCloseDb struct {
 	File StockCloseFile
@@ -122,6 +125,58 @@ func (db *StockCloseDb) UpdateMax(id string) {
 	db.File.Update(db.RowsToString())
 
 }
+
+
+func (db StockCloseDb) FindByDate(year int, month time.Month, day int) (StockCloseEnt, bool) {
+
+	var row StockCloseEnt
+	var found bool = false
+
+	for _, stock := range db.Data {
+
+		stockDate := stock.StockDate
+
+		if stockDate.Year() == year &&
+			stockDate.Month() == month &&
+			stockDate.Day() == day {
+
+			row = stock
+			found = true
+			break
+		}
+	}
+
+	return row, found
+
+}
+
+
+func (db *StockCloseDb) Update(ent StockCloseEnt) bool {
+
+	found := false
+
+	for i, v := range db.Data {
+		if v.ID == ent.ID {
+
+			db.Data[i].Open = ent.Open
+			db.Data[i].Close = ent.Close
+			db.Data[i].High = ent.High
+			db.Data[i].Low = ent.Low
+			db.Data[i].VolumeTrade = ent.VolumeTrade
+
+			found = true
+			break
+
+		}
+	}
+
+	if found == true {
+		db.File.Update(db.RowsToString())
+	}
+
+	return found
+}
+
 
 
 type StockCloseByDate [] StockCloseEnt
